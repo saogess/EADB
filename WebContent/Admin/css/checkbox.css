@@ -1,0 +1,69 @@
+/*隐藏原来的复选框*/
+.regular-checkbox {
+    display: none;
+}
+/*定义复选框样式*/
+.regular-checkbox + label {
+    position: relative;
+    display: inline-block;
+    padding: 7px;
+    background-color: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #CACACA;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.regular-checkbox + label:active, .regular-checkbox + label:checked + label:active {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.regular-checkbox:checked + label {
+    background-color: #E9ECEE;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+/*选中后的效果*/
+.regular-checkbox:checked + label:after {
+    content: '\2714';
+    /*对勾*/
+    position: absolute;
+    font-size: 12px;
+    /*设置对勾的大小*/
+    top: 0px;
+    left: 2px;
+    /*设置位置的偏向*/
+    color: #ffffff;
+    /*设置颜色绿色*/
+    font-weight: bold;
+    /*设置对勾的粗细*/
+}
+/*抖动*/
+.lanren {
+    margin: auto;
+    margin-top: 10px;
+    width: 150px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 2px;
+    border: none;
+}
+.lanren:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
